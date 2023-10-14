@@ -1,19 +1,17 @@
 class Bola:
+#     Construtor
     def __init__(self, cor, circunferencia, material):
         self.cor = cor
-        self.circun = circunferencia
+        self.circunferencia = circunferencia
         self.material = material
+
+    def trocaCor(self, color):
+        self.cor = color
 
     def mostraCor(self):
         return self.cor
 
-    def trocaCor(self):
-        color = input("Insira a nova cor: ")
-        self.cor = color
-        return self.cor
 
-
-adidas = Bola("Azul", 38, 'Couro')
-adidas.trocaCor()
-
-print(f"Cor da bola: {adidas.mostraCor()}; Circuferência da bola: {adidas.circun}cm; Material da bola: {adidas.material}")
+adidas = Bola('Azul', 35, "Poliuretano")
+adidas.trocaCor("Preta")
+print(f'Cor da bola: {adidas.mostraCor()}; Circunferência: {adidas.circunferencia}cm; Material: {adidas.material}')

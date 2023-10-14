@@ -1,21 +1,20 @@
 class Retangulo:
-    def __init__(self, b, h):
-        self.base = b
-        self.altura = h
-
-    def setLados(self):
-        base = input("Insira um novo valor para base: ")
+    def __init__(self, base, altura):
         self.base = base
-        altura = input("Insira um novo valor para altura: ")
         self.altura = altura
-        return self.base and self.altura
 
-    def Area(self):
-        return self.base * self.altura
+    def mudarLados(self, nova_base, nova_altura):
+        self.base = nova_base
+        self.altura = nova_altura
 
-    def Perimetro(self):
-        return 2*(self.base + self.altura)
+    def retornaLados(self):
+        return f'Base = {self.base}m; Altura = {self.altura}m'
 
-retan = Retangulo(4, 5)
+    def calculoArea(self):
+        area = self.base * self.altura
+        return area
 
-print(f'Base: {retan.base} cm; Altura: {retan.altura} cm; Área: {retan.Area()} cm; Perímetro: {retan.Perimetro()} cm')
+    def calculoPerim(self):
+        perimetro = 2 * (self.base + self.altura)
+        return perimetro
+
