@@ -10,10 +10,13 @@ class Veiculo:
 
 
     def abastecer(self, litro):
-        print(f'Seu tanque possuia {self.qtd_combustivel}L de combustível\n'
-              f'Será adicionado {litro}L ao tanque!\n')
-        self.qtd_combustivel = self.qtd_combustivel + litro
-        print(f'Tanque: {self.qtd_combustivel}L')
+        if litro < 1 or self.qtd_combustivel == 100:
+            print('Não é possível abastecer!!')
+        else:
+            print(f'Seu tanque possuia {self.qtd_combustivel}L de combustível\n'
+                  f'Será adicionado {litro}L ao tanque!\n')
+            self.qtd_combustivel = self.qtd_combustivel + litro
+            print(f'Tanque: {self.qtd_combustivel}L')
 
     def obterGasolina(self):
         return f'Tanque: {self.qtd_combustivel}L'
