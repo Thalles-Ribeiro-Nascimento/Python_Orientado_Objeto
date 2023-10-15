@@ -21,8 +21,11 @@ class Veiculo:
     def andar(self, km):
         print(f'Andou {km}Km\n')
         self.qtd_combustivel = self.qtd_combustivel - (km/self.consumo)
-        print(f'Quantidade consumida: {km/self.consumo:.2f}L')
-        print(f'Combustível restante no tanque: {self.qtd_combustivel:.2f}L')
+        if self.qtd_combustivel < 1:
+            print('Não é possível realizar esse calculo!')
+        else:
+            print(f'Quantidade consumida: {km/self.consumo:.2f}L')
+            print(f'Combustível restante no tanque: {self.qtd_combustivel:.2f}L')
 
 
 palio = Veiculo(str(input('Insira o modelo do veículo: ')), float(input(f'Insira o consumo: ')))
